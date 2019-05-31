@@ -1,8 +1,65 @@
-.hello {
-    h1 {
-        color: skyblue;
+// reset
+
+* {
+    //防止margin padding撑开元素(只会挤压元素中的内容)
+    box-sizing: border-box;
+    //取消点击高亮
+    outline: none;
+}
+html {
+    font-size: 13px;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2em;
+    background-color: #f1f1f1;
+}
+a {
+    color: #999;
+    text-decoration: none;
+}
+
+//colors
+$colors: (
+    "primary": #db9e3f,
+    "white": #fff,
+    "black": #000,
+    "dark": #222,
+    "gray": #999,
+    "light": #f9f9f9,
+    "dark-1": #343440
+);
+
+@each $colorKey, $color in $colors {
+    .text-#{$colorKey} {
+        color: $color;
     }
-    h3 {
-        color: red;
+    .bg-#{$colorKey} {
+        background-color: $color;
     }
 }
+
+//text
+@each $var in (left, center, right) {
+    .text-#{$var} {
+        text-align: $var;
+    }
+}
+
+//font size
+$base-font-size: 1rem;
+$font-sizes: (
+    xs: 0.625,  //10px
+    sm: 0.75,   //12px
+    md: 1,      //13px
+    lg: 1.0769,  //14px
+    xl: 1.2308,  //16px
+    );
+
+@each $sizeKey, $size in $font-sizes {
+    .fs-#{$sizeKey} {
+        font-size: $size * $base-font-size;
+    }
+}
+
