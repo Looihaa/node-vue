@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import main from './views/main.vue'
 import Login from './views/Login.vue'
 
