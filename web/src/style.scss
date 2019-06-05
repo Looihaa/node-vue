@@ -14,6 +14,8 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.2em;
   background-color: #f1f1f1;
+  //苹果才看得出来的 字体平滑 稍微变细
+  -webkit-font-smoothing: antialiased;
 }
 a {
   color: #999;
@@ -27,6 +29,7 @@ $colors: (
   "black": #000,
   "dark": #222,
   "gray": #999,
+  "gray-1": #666,
   "light": #f9f9f9,
   "dark-1": #343440
 );
@@ -50,9 +53,11 @@ $colors: (
 //font size
 $base-font-size: 1rem;
 $font-sizes: (
-  xs: 0.625,
+  xxs: 0.6154,
+  //8px
+  xs: 0.7692,
   //10px
-    sm: 0.75,
+    sm: 0.9231,
   //12px
     md: 1,
   //13px
@@ -166,4 +171,23 @@ $spacing-size: (
     .#{$typeKey} {
         #{$type}: 0;
     }
+}
+
+//button
+.btn {
+  border: none;
+  border-radius: 0.1538;
+  font-size: map-get($font-sizes, 'sm') * $base-font-size;
+  padding: 0.2rem, 0.6rem;
+}
+
+//nav
+.nav {
+  .nav-item {
+    border-bottom: 3px solid transparent;
+    padding-bottom: 0.1rem;
+    &.active {
+      border-bottom: 3px solid #fff;
+    }
+  }
 }
