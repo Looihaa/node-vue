@@ -3,7 +3,7 @@
     <div class="card-header d-flex pb-3">
       <i class="iconfont" :class="`icon-${icon}`"></i>
       <div class="fs-xl flex-1 px-2">{{title}}</div>
-      <i class="iconfont icon-more"></i>
+      <router-link :to="`/${link}`" tag="i" class="iconfont icon-more"></router-link>
     </div>
     <div class="card-body pt-3">
       <slot></slot> 
@@ -15,7 +15,8 @@
 export default {
     props: {
         title: { type: String, required: true },
-        icon: { type: String, required: true }
+        icon: { type: String, required: true },
+        link: { type: String, required: true }
     }
 };
 </script>

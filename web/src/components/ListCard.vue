@@ -1,5 +1,5 @@
 <template>
-  <m-card :icon="icon" :title="title">
+  <m-card :icon="icon" :title="title" :link="link">
     <div class="nav jc-between">
       <div class="nav-item" :class="{active:active === i}"
       v-for="(category, i) in categories" :key="i"
@@ -31,6 +31,7 @@ export default {
   props: {
     icon: { tyle: String, required: true },
     title: { tyle: String, required: true },
+    link: { type: String, required: true },
     categories: { tyle: Array, required: true }
   }
 };

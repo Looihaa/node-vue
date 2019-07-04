@@ -21,3 +21,8 @@
     height: 5rem;
     display: block;
   }
+  .banner {
+    min-width: 5rem;
+    height: 5rem;
+    display: block;
+  }
